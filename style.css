@@ -1,0 +1,186 @@
+@font-face {
+    font-family: Cervo;
+    src: url("Assets/CervoNeue-BlackNeue.ttf");
+}
+
+@font-face {
+    font-family: SofiaBlack;
+    src: url("Assets/Sofia-Pro-Black.otf");
+}
+
+@font-face {
+    font-family: SofiaRegular;
+    src: url("Assets/Sofia-Pro-Regular.otf");
+}
+
+body {
+    background-color: #3C69D6;
+    font-family: SofiaBlack;
+    user-select: none;
+    overflow: hidden;
+}
+
+.logo {
+    position: absolute;
+    margin-top: -35px;
+}
+
+.navBar {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    text-transform: uppercase;
+    justify-content: center;
+    margin-top: 50px;
+
+}
+
+.navBar span {
+    margin-left: 20px;
+    margin-right: 20px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.navBar span:hover {
+    opacity: 0.5;
+}
+
+.purchaseButton {
+    position: absolute;
+    right: 30px;
+    color: white;
+    text-transform: uppercase;
+    margin-top: -32px;
+    background-color: #FF1737;
+    border-radius: 50px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.purchaseButton:hover {
+    color: #FF1737;
+    background-color: white;
+}
+
+.canImg {
+    position: absolute;
+    right: 8vw;
+    top: 20vh;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.header {
+    color: white;
+    font-family: Cervo;
+    position: absolute;
+    top: 20vh;
+    margin-left: 200px;
+    font-size: 100px;
+}
+
+.subText {
+    color: white;
+    font-family: SofiaRegular;
+    position: absolute;
+    top: 32vh;
+    margin-left: 200px;
+    font-size: 25px;
+    width: 50%;
+}
+
+.startButton {
+    position: absolute;
+    margin-left: 200px;
+    color: white;
+    text-transform: uppercase;
+    top: 47vh;
+    background-color: #FF1737;
+    border-radius: 50px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.startButton:hover {
+    color: #FF1737;
+    background-color: white;
+}
+
+/* Wave Animation*/
+
+.container {
+    width: 100vw;
+    height: 400px;
+    background: transparent;
+    overflow: hidden;
+    position: relative;
+    left: -10px;
+    bottom: -550px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.ocean {
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    width: 100%;
+}
+
+.wave {
+    background: url("Assets/wave.svg") repeat-x;
+    position: absolute;
+    top: -198px;
+    width: 6000px;
+    height: 200px;
+    transform: translate3d(0, 0, 0);
+    animation: wave 5s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    z-index: 1000;
+}
+
+.wave:nth-of-type(2) {
+    top: -175px;
+    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 5s ease -1.25s infinite;
+    opacity: 1;
+    z-index: 999;
+}
+
+.wave:nth-of-type(3) {
+    top: -152px;
+    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.25s infinite, swell 5s ease -2.5s infinite;
+    opacity: 0.8;
+    z-index: 998;
+}
+
+.wave:nth-of-type(4) {
+    top: -129px;
+    animation: wave 5s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.25s infinite, swell 7s ease -2.5s infinite;
+    opacity: 0.6;
+    z-index: 997;
+}
+
+@keyframes wave {
+    0% {
+        margin-left: 0;
+    }
+
+    100% {
+        margin-left: -1600px;
+    }
+}
+
+@keyframes swell {
+
+    0%,
+    100% {
+        transform: translate3d(0, -25px, 0);
+    }
+
+    50% {
+        transform: translate3d(0, 5px, 0);
+    }
+}
